@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+$(document).ready(function() {
+
+$('#first_form').submit(function(e) {
+  e.preventDefault();
+  var first_name = $('#first_name').val();
+  var email = $('#email').val();
+  var password = $('#password').val();
+
+  $(".error").remove();
+
+  $('#first_form')[0].reset();
+
+  if (first_name.length < 1) {
+    $('#first_name').after('<span class="error">This field is required</span>');
+  }
+  else{
+    var regEx = /^[A-Za-z]+$/;
+    var validName = regEx.test(first_name);
+    if(!validName){
+        $('#first_name').after('<span class="error">Enter a valid Name</span>')
+    }
+  }
+
+
+  if(email.length < 1){
+        $("#email").after('<span class="error"> This field is required</span>');
+    }else{
+        var regEx = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+        var validEmail = regEx.test(email);
+        if(!validEmail){
+            $("#email").after('<span class="error">Invalid email address</span>');
+    }
+
+ }
+  if (password.length < 8) {
+    $('#password').after('<span class="error">Password must be at least 8 characters long</span>');
+  }
+  if ($('.error').length === 0) {
+            $('#successMessage').fadeIn().delay(200).fadeOut();
+        }
+});
+
+});
+    </script>
+</head>
+<body>
+    <div id="successMessage" class="successMessage" style="display: none;">
+        Form submitted successfully
+    </div>
+    <div class="container">
+       
+        <h2>Form Validation</h2>
+    <form id="first_form">
+      <div>
+        <label>First Name:</label>
+        <input class="input" type="text" id="first_name" name="first_name" placeholder="enter the username"></input>
+      </div>
+      <div>
+        <label>Email:</label>
+        <input class="mail" type="email" id="email" name="email" placeholder="enter the email"></input>
+      </div>
+      <div>
+        <label>Password:</label>
+        <input class="pass" type="password" id="password" name="password" placeholder="enter the password"></input>
+      </div>
+      <div>
+        <button class="sub"  id="form_submit" type="submit">Submit</button>
+      </div>
+   </div>
+</form>
+
+</body>
+</html>
+
+

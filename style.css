@@ -1,0 +1,74 @@
+body{
+    background-color: beige;
+}
+.container {
+width: 50%;
+margin: 50px auto;
+text-align: center;
+}
+
+h2 {
+font-size: 24px;
+margin-bottom: 20px;
+}
+
+label {
+display: flex;
+margin-bottom: 5px;
+font-weight: bold;
+}
+
+.input{
+width:100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
+}
+.mail{
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
+}
+.pass{
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+.sub {
+background-color: #3cba3c;
+color: white;
+cursor: pointer;
+width: 100px;
+border-radius: 3px;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #605656;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+.sub:hover {
+background-color: #45a049;
+
+}
+.error{
+color: red;
+}
+
+
+.successMessage {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
